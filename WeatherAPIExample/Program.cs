@@ -12,8 +12,8 @@ namespace WeatherAPIExample
         public static void Main(string[] args)
         {
             Weather API = new Weather(); //Create a new instance
-            API.apiKey = ""; // This is the API Key
-            API.projectName = ""; //This is the Project Key
+            API.apiKey = "c804d04d1634e3142ca03e5493456d7a"; // This is the API Key
+            API.projectName = "chakratoswetterfrosch"; //This is the Project Key
             Console.Write("Input your Citycode/PLZ: ");
             string input = Console.ReadLine(); //This is the CityCode
 
@@ -31,9 +31,9 @@ namespace WeatherAPIExample
             API.Citycode(surl); //Get the Citycode
             Checksume = API.GetMD5Hash(API.projectName + API.apiKey + API.CityCode); //Generate a new MD5 Checksume
             API.wURL = "http://api.wetter.com/forecast/weather/city/" + API.CityCode + "/project/" + API.projectName + "/cs/" + Checksume; //Get the Weather XML
-            API.GetWeather(API.wURL, "06:00"); //Read the Weather for the time 6AM, you can choose between 06:00 11:00 17:00 23:00.
+            API.GetWeather(API.wURL, "11:00"); //Read the Weather for the time 6AM, you can choose between 06:00 11:00 17:00 23:00.
 
-
+            Console.WriteLine("");
             Console.WriteLine(API.CityName); //Display the CityName
             Console.WriteLine(API.Temperature); //Display the Temperature
             Console.WriteLine(API.WeatherType); //Display what weather it is

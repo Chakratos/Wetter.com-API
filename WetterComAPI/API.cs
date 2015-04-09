@@ -11,6 +11,8 @@ using System.Windows;
 using System.Xml.Linq;
 using System.Xml.XPath;
 
+//Made by Chakratos
+
 namespace WeatherAPI
 {
     class Weather
